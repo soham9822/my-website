@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina AI - Create Cinematic Videos with AI</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f12;
+            color: #ffffff;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(15, 15, 18, 0) 50%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f0f12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fa-solid fa-play text-white text-xs"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight">Lumina AI</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#features" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium text-gray-300">Features</a>
+                        <a href="#demo" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium text-gray-300">Showcase</a>
+                        <a href="#pricing" class="hover:text-blue-400 transition-colors px-3 py-2 rounded-md text-sm font-medium text-gray-300">Pricing</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="login.html" class="text-gray-300 hover:text-white px-4 py-2 text-sm font-medium mr-2">Log in</a>
+                    <a href="signup.html" class="bg-white text-black hover:bg-gray-200 px-4 py-2 rounded-full text-sm font-medium transition-colors">Sign Up</a>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block mb-6 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-sm">
+                <span class="text-blue-400 text-xs font-semibold uppercase tracking-wider">New: AI Video 2.0 Released</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
+                Turn Text into <br>
+                <span class="gradient-text">Cinematic Video</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400 mb-10 font-light">
+                Generate professional videos from simple text prompts in minutes. No cameras, no actors, no editing skills required.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="signup.html" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg glow-button flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Create Video
+                </a>
+                <a href="signup.html" class="bg-white/10 hover:bg-white/20 text-white border border-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-all backdrop-blur-sm">
+                    Get Started Free
+                </a>
+            </div>
+            
+            <div class="mt-16 relative mx-auto max-w-5xl">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-30"></div>
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-[#1a1a20]">
+                    <!-- Video Placeholder / UI Mockup -->
+                    <div class="aspect-video w-full bg-gray-900 flex items-center justify-center relative group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=2940&auto=format&fit=crop" alt="Dashboard Preview" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-play text-white text-3xl ml-1"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- UI Overlay Mockup -->
+                        <div class="absolute bottom-6 left-6 right-6 p-4 bg-black/60 backdrop-blur-md rounded-xl border border-white/10 flex items-center gap-4">
+                            <div class="flex-1 bg-white/10 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-500 h-full w-2/3"></div>
+                            </div>
+                            <span class="text-xs text-gray-300 font-mono">Generating: 67%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="mt-8 text-sm text-gray-500">Trusted by creators at</p>
+            <div class="mt-4 flex justify-center gap-8 opacity-40 grayscale">
+                <i class="fa-brands fa-google text-2xl"></i>
+                <i class="fa-brands fa-microsoft text-2xl"></i>
+                <i class="fa-brands fa-spotify text-2xl"></i>
+                <i class="fa-brands fa-amazon text-2xl"></i>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/20 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-[120px]"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-[#0f0f12] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Features for <span class="text-blue-400">Modern Creators</span></h2>
+                <p class="text-gray-400 text-lg">Everything you need to scale your video production without the complexity.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-wand-magic text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Text to Video</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Simply type your script or idea, and our AI generates high-quality video clips, animations, and transitions instantly.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-astronaut text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Avatars</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Choose from 100+ realistic AI avatars or create your own digital twin to present your content professionally.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="glass-card p-8 rounded-2xl hover:bg-white/5 transition-colors group">
+                    <div class="w-12 h-12 rounded-lg bg-pink-500/20 flex items-center justify-center mb-6 text-pink-400 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-earth-americas text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Multi-Language</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Automatically translate and dub your videos into 60+ languages with perfect lip-sync technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase / How it Works -->
+    <section id="demo" class="py-24 bg-[#0a0a0c]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Create in 3 Simple Steps</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-sm">1</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Input your prompt</h3>
+                                <p class="text-gray-400">Describe the video you want to create or paste a URL to a blog post.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center font-bold text-sm">2</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Customize style & avatar</h3>
+                                <p class="text-gray-400">Select a visual style, choose an AI presenter, and pick a voice.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center font-bold text-sm">3</div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Export & Share</h3>
+                                <p class="text-gray-400">Download in 4K resolution or share directly to social media platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <a href="#" class="text-blue-400 font-medium hover:text-blue-300 flex items-center gap-2 group">
+                            Explore all templates <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 translate-y-8">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1000&auto=format&fit=crop" class="rounded-xl w-full h-48 object-cover opacity-80 hover:opacity-100 transition-opacity duration-300 shadow-lg border border-white/5" alt="Example 1">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" class="rounded-xl w-full h-64 object-cover opacity-80 hover:opacity-100 transition-opacity duration-300 shadow-lg border border-white/5" alt="Example 2">
+                        </div>
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" class="rounded-xl w-full h-64 object-cover opacity-80 hover:opacity-100 transition-opacity duration-300 shadow-lg border border-white/5" alt="Example 3">
+                            <img src="https://images.unsplash.com/photo-1535016120720-40c6874c3b1c?q=80&w=1000&auto=format&fit=crop" class="rounded-xl w-full h-48 object-cover opacity-80 hover:opacity-100 transition-opacity duration-300 shadow-lg border border-white/5" alt="Example 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-[#0f0f12]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Loved by Creators</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Lumina AI cut my video production time by 90%. I can now publish daily content without hiring an editor."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-10 h-10 rounded-full">
+                        <div>
+                            <h4 class="font-medium text-sm">Sarah Jenkins</h4>
+                            <p class="text-xs text-gray-500">Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"The AI avatars are incredibly realistic. We use them for all our internal training videos now."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-10 h-10 rounded-full">
+                        <div>
+                            <h4 class="font-medium text-sm">David Chen</h4>
+                            <p class="text-xs text-gray-500">HR Director</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl border border-white/5">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Finally, a tool that actually understands context. The b-roll selection is spot on every time."</p>
+                    <div class="flex items-center gap-3">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User" class="w-10 h-10 rounded-full">
+                        <div>
+                            <h4 class="font-medium text-sm">Elena Rodriguez</h4>
+                            <p class="text-xs text-gray-500">Social Media Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 bg-[#0a0a0c]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-gray-400">Start for free, scale as you grow.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Free Tier -->
+                <div class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold">Free</h3>
+                        <p class="text-gray-400 text-sm mt-1">For hobbyists and testing</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$0</span><span class="text-gray-500">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> 5 minutes of video/mo</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> Watermarked export</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> Standard voices</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> 720p resolution</li>
+                    </ul>
+                    <a href="signup.html" class="w-full py-3 rounded-lg border border-white/20 text-center block">Get Started</a>
+                </div>
+                
+                <!-- Pro Tier -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-blue-900/40 to-blue-900/10 border border-blue-500/50 flex flex-col relative transform md:-translate-y-4 shadow-xl">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold">Creator Pro</h3>
+                        <p class="text-blue-200 text-sm mt-1">For serious content creators</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$29</span><span class="text-gray-400">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center gap-2 text-sm text-white"><i class="fa-solid fa-check text-blue-400"></i> 60 minutes of video/mo</li>
+                        <li class="flex items-center gap-2 text-sm text-white"><i class="fa-solid fa-check text-blue-400"></i> No watermarks</li>
+                        <li class="flex items-center gap-2 text-sm text-white"><i class="fa-solid fa-check text-blue-400"></i> Premium AI voices</li>
+                        <li class="flex items-center gap-2 text-sm text-white"><i class="fa-solid fa-check text-blue-400"></i> 1080p resolution</li>
+                        <li class="flex items-center gap-2 text-sm text-white"><i class="fa-solid fa-check text-blue-400"></i> Auto-captions</li>
+                    </ul>
+                    <a href="checkout.html" class="w-full py-3 rounded-lg bg-blue-600 text-white text-center block">Start Free Trial</a>
+                </div>
+                
+                <!-- Studio Tier -->
+                <div class="glass-card p-8 rounded-2xl border border-white/5 flex flex-col">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold">Studio</h3>
+                        <p class="text-gray-400 text-sm mt-1">For agencies and teams</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">$99</span><span class="text-gray-500">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 flex-1">
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> Unlimited video generation</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> Custom avatars</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> 4K resolution</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> API Access</li>
+                        <li class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check text-green-500"></i> Priority support</li>
+                    </ul>
+                    <a href="contact.html" class="w-full py-3 rounded-lg border border-white/20 text-center block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-3xl p-10 md:p-16 border border-white/10 relative overflow-hidden">
+                <!-- Decorative background blobs -->
+                <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-blue-500/30 rounded-full blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-purple-500/30 rounded-full blur-2xl"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready to create your first masterpiece?</h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Join 50,000+ creators who are revolutionizing their content with Lumina AI.</p>
+                <div class="relative z-10">
+                    <button class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-colors inline-flex items-center gap-2">
+                        Get Started for Free <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <p class="mt-4 text-sm text-gray-400">No credit card required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                            <i class="fa-solid fa-play text-white text-xs"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight">Lumina AI</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mb-6">Empowering creators with the world's most advanced AI video generation technology.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Showcase</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Integration</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Community</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">API Docs</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Tutorials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">© 2024 Lumina AI Inc. All rights reserved.</p>
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    Systems Operational
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/90 z-40 hidden flex flex-col items-center justify-center space-y-8 md:hidden transition-opacity duration-300 opacity-0">
+        <a href="#features" class="text-2xl font-medium text-white hover:text-blue-400 mobile-link">Features</a>
+        <a href="#demo" class="text-2xl font-medium text-white hover:text-blue-400 mobile-link">Showcase</a>
+        <a href="#pricing" class="text-2xl font-medium text-white hover:text-blue-400 mobile-link">Pricing</a>
+        <div class="flex flex-col gap-4 mt-8 w-64">
+            <a href="login.html" class="text-center text-white border border-white/20 py-3 rounded-full">Log in</a>
+            <a href="signup.html" class="text-center bg-white text-black py-3 rounded-full font-medium">Sign Up</a>
+        </div>
+        <button id="close-menu" class="absolute top-8 right-8 text-gray-400 hover:text-white">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('bg-[#0f0f12]/90', 'backdrop-blur-md', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-[#0f0f12]/90', 'backdrop-blur-md', 'shadow-lg');
+            }
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.querySelector('button[aria-controls="mobile-menu"]');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isHidden = mobileMenuOverlay.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenuOverlay.classList.remove('hidden');
+                // slight delay to allow display:block to apply before opacity transition
+                setTimeout(() => {
+                    mobileMenuOverlay.classList.remove('opacity-0');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenuOverlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenuOverlay.classList.add('hidden');
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Simple smooth reveal on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach((el) => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
